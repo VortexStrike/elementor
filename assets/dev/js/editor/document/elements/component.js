@@ -80,19 +80,19 @@ export default class Component extends ComponentBase {
 				);
 			},
 			allowAddingWidgets() {
-				return elementor.config.document.panel.allow_adding_widgets ?? true;
+				return elementor.config.document.panel?.allow_adding_widgets ?? true;
 			},
 			showNavigator() {
-				return elementor.config.document.panel.show_navigator ?? true;
+				return elementor.config.document.panel?.show_navigator ?? true;
 			},
 			showCopyAndShareButton() {
-				return elementor.config.document.panel.show_copy_and_share ?? false;
+				return elementor.config.document.panel?.show_copy_and_share ?? false;
 			},
 			getTitleForLibraryClose() {
-				return elementor.config.document.panel.library_close_title ?? '';
+				return elementor.config.document.panel?.library_close_title ?? '';
 			},
 			getTitleForPublishButton() {
-				return elementor.config.document.panel.publish_button_title ?? '';
+				return elementor.config.document.panel?.publish_button_title ?? '';
 			},
 		};
 	}

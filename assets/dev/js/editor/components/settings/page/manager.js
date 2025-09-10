@@ -42,7 +42,7 @@ module.exports = BaseSettings.extend( {
 				id: editModel.id,
 				model: editModel,
 				settings: editModel.get( 'settings' ),
-				label: elementor.config.document.panel.title,
+				label: elementor.config.document.panel?.title,
 				controls: this.model.controls,
 				children: new ChildrenArray( ... elementor.elements || [] ),
 				parent: false,

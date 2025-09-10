@@ -8,7 +8,8 @@ export class KitAddMenuItems extends $e.modules.hookUI.Before {
 	}
 
 	getConditions() {
-		return 'kit' === elementor.documents.getCurrent().config.type && ! Object.keys( $e.components.get( 'panel/global' ).getTabs() ).length;
+		const currentDocument = elementor.documents.getCurrent();
+		return 'kit' === currentDocument?.config?.type && ! Object.keys( $e.components.get( 'panel/global' ).getTabs() ).length;
 	}
 
 	apply() {

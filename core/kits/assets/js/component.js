@@ -42,8 +42,9 @@ export default class extends ComponentBase {
 			open: {
 				keys: 'ctrl+k',
 				dependency: () => {
+					const currentDocument = elementor.documents.getCurrent();
 					return (
-						'kit' !== elementor.documents.getCurrent().config.type &&
+						'kit' !== currentDocument?.config?.type &&
 						'edit' === elementor.channels.dataEditMode.request( 'activeMode' )
 					);
 				},

@@ -108,7 +108,7 @@ export default class Component extends ComponentBase {
 	 * @return {number} document id
 	 */
 	getCurrentId() {
-		return this.currentDocument.id;
+		return this.currentDocument?.id || null;
 	}
 
 	getInitialId() {

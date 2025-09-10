@@ -48,7 +48,7 @@ const TemplateLibraryManager = function() {
 			container: __( 'Container', 'elementor' ),
 			...elements,
 
-			[ elementor.config.document.type ]: elementor.config.document.panel.title,
+			[ elementor.config.document.type ]: elementor.config.document.panel?.title,
 		};
 
 		jQuery.each( translationMap, function( type, title ) {

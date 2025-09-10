@@ -47,9 +47,12 @@ export default class Module extends elementorModules.editor.utils.Module {
 	}
 
 	registerAiLayoutBehavior( behaviors ) {
+		const currentDocument = window.elementor.documents.getCurrent();
+		const documentType = currentDocument?.config?.type || 'wp-page';
+
 		behaviors.ai = {
 			behaviorClass: AiLayoutBehavior,
-			context: { documentType: window.elementor.documents.getCurrent().config.type },
+			context: { documentType },
 		};
 
 		return behaviors;

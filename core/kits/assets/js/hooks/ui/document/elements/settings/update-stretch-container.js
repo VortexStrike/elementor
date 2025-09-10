@@ -15,7 +15,8 @@ export class KitUpdateStretchContainer extends $e.modules.hookUI.After {
 	}
 
 	getConditions() {
-		return 'kit' === elementor.documents.getCurrent().config.type;
+		const currentDocument = elementor.documents.getCurrent();
+		return 'kit' === currentDocument?.config?.type;
 	}
 
 	apply( args ) {

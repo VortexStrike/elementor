@@ -4,7 +4,11 @@ export const Default = () => {
 	QUnit.module( 'Default', ( hooks ) => {
 		hooks.before( () => {
 			// Save the 'post_status' before the test, to put it back later.
-			tempPostStatus = elementor.documents.getCurrent().config.settings.settings.post_status;
+			const currentDocument = elementor.documents.getCurrent();
+			if ( ! currentDocument?.config?.settings?.settings ) {
+				throw new Error( 'No current document available for test setup' );
+			}
+			tempPostStatus = currentDocument.config.settings.settings.post_status;
 		} );
 
 		hooks.after( () => {

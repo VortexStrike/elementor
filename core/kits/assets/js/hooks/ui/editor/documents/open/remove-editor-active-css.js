@@ -8,7 +8,8 @@ export class KitRemoveEditorActiveCSSDocumentsOpen extends $e.modules.hookUI.Aft
 	}
 
 	getConditions() {
-		return 'kit' === elementor.documents.getCurrent().config.type;
+		const currentDocument = elementor.documents.getCurrent();
+		return 'kit' === currentDocument?.config?.type;
 	}
 
 	apply() {

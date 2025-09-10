@@ -21,7 +21,8 @@ export class KitRemovePreviewDeletedVariables extends $e.modules.hookUI.Before {
 	}
 
 	getConditions( args ) {
-		return this.controls.includes( args.name ) && 'kit' === elementor.documents.getCurrent().config.type;
+		const currentDocument = elementor.documents.getCurrent();
+		return this.controls.includes( args.name ) && 'kit' === currentDocument?.config?.type;
 	}
 
 	apply( args ) {

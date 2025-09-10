@@ -79,8 +79,8 @@ PanelElementsLayoutView = Marionette.LayoutView.extend( {
 
 		// TODO: Change the array from server syntax, and no need each loop for initialize
 		_.each( elementor.widgetsCache, ( widget ) => {
-			if ( elementor.config.document.panel.widgets_settings[ widget.widget_type ] ) {
-				widget = _.extend( widget, elementor.config.document.panel.widgets_settings[ widget.widget_type ] );
+			if ( elementor.config.document.panel?.widgets_settings[ widget.widget_type ] ) {
+				widget = _.extend( widget, elementor.config.document.panel?.widgets_settings[ widget.widget_type ] );
 			}
 
 			if ( ! this.shouldAddWidget( widget ) ) {
@@ -164,7 +164,7 @@ PanelElementsLayoutView = Marionette.LayoutView.extend( {
 
 		var categoriesCollection = new PanelElementsCategoriesCollection();
 
-		_.each( elementor.config.document.panel.elements_categories, function( categoryConfig, categoryName ) {
+		_.each( elementor.config.document.panel?.elements_categories, function( categoryConfig, categoryName ) {
 			// Set defaults.
 			if ( 'undefined' === typeof categoryConfig.active ) {
 				categoryConfig.active = true;

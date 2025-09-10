@@ -28,7 +28,13 @@ export const SettingsProvider = ( props ) => {
 	const getInitialSettings = () => {
 		setStatus( 'loading' );
 
-		const kitSettings = elementor.documents.getCurrent().config.settings.settings;
+		const currentDocument = elementor.documents.getCurrent();
+		if ( ! currentDocument?.config?.settings?.settings ) {
+			setStatus( 'error' );
+			return;
+		}
+
+		const kitSettings = currentDocument.config.settings.settings;
 
 		var map = new Map( [
 			[ 'colors', new Map( [

@@ -129,7 +129,8 @@ export default class Manager extends elementorModules.editor.utils.Module {
 		}
 
 		// The kit document has its own CSS.
-		if ( 'kit' === elementor.documents.getCurrent().config.type ) {
+		const currentDocument = elementor.documents.getCurrent();
+		if ( 'kit' === currentDocument?.config?.type ) {
 			this.variablesCSS.removeStyleFromDocument();
 			return;
 		}

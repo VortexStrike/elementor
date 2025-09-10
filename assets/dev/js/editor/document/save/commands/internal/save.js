@@ -23,7 +23,7 @@ export class Save extends $e.modules.CommandInternalBase {
 
 		let elements = [];
 
-		if ( elementor.config.document.panel.has_elements ) {
+		if ( elementor.config.document.panel?.has_elements ) {
 			elements = container.model.get( 'elements' ).toJSON( { remove: [ 'default', 'editSettings', 'defaultEditSettings' ] } );
 		}
 

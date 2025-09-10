@@ -39,7 +39,7 @@ export class FooterSaverAfterSave extends HookUIAfter {
 		} );
 
 		elementor.notifications.showToast( {
-			message: elementor.config.document.panel.messages.publish_notification,
+			message: elementor.config.document.panel?.messages.publish_notification,
 			buttons,
 		} );
 	}
