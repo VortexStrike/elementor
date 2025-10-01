@@ -2,6 +2,7 @@ import { Browser, BrowserContext, Page, TestInfo } from '@playwright/test';
 import { EditorDriver, DriverContext } from './editor-driver';
 import WpAdminPage from '../pages/wp-admin-page';
 import ApiRequests from '../assets/api-requests';
+import { wpCli } from '../assets/wp-cli';
 
 export class DriverFactory {
 	private static async createTemporaryContext(
@@ -40,6 +41,10 @@ export class DriverFactory {
 
 		await wpAdmin.setExperiments( experiments );
 		await context.close();
+	}
+
+	static async setExperimentsCli( experiments: string ): Promise<void> {
+		await wpCli( `wp elementor experiments activate ${ experiments }` );
 	}
 
 	static async resetExperiments( browser: Browser, testInfo?: TestInfo, apiRequests?: ApiRequests ): Promise<void> {
